@@ -4,8 +4,10 @@
       <hr />
       <h2>{{ post.id }}</h2>
       <h2>{{ post.title }}</h2>
-      <p>{{ post.body }}</p>
-      <img v-bind:src="post.image" />
+      <!-- pre-pending your routes with "/" ensures that you start at the root route -->
+      <router-link v-bind:to="`/posts/${post.id}`">
+        <img v-bind:src="post.image" />
+      </router-link>
       <hr />
     </ul>
   </div>

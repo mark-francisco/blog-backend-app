@@ -37,6 +37,7 @@ export default {
       title: "",
       body: "",
       image: "",
+      errors: "",
     };
   },
   methods: {
@@ -53,6 +54,7 @@ export default {
         })
         .catch((err) => {
           console.log(err.response);
+          this.errors = err.data;
         });
     },
   },

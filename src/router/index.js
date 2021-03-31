@@ -6,6 +6,8 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import PostsIndex from "../views/PostsIndex.vue";
 import PostsNew from "../views/PostsNew.vue";
+import PostsShow from "../views/PostsShow.vue";
+import PostsEdit from "../views/PostsEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -47,6 +49,17 @@ const routes = [
     path: "/posts/new",
     name: "Posts New",
     component: PostsNew,
+  },
+  // wildcards must come after routes with literal defined suffixes.
+  {
+    path: "/posts/:id",
+    name: "Posts Show",
+    component: PostsShow,
+  },
+  {
+    path: "/posts/:id/edit",
+    name: "Posts Edit",
+    component: PostsEdit,
   },
 ];
 

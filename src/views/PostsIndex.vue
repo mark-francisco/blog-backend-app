@@ -1,0 +1,41 @@
+<template>
+  <div class="posts-index">
+    <ul v-for="post in posts" v-bind:key="post.id">
+      <hr />
+      <h2>{{ post.id }}</h2>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p>
+      <img v-bind:src="post.image" />
+      <hr />
+    </ul>
+  </div>
+</template>
+
+<style>
+img {
+  height: 200px;
+}
+</style>
+
+<script>
+import axios from "axios";
+
+export default {
+  data: function () {
+    return {
+      posts: [],
+    };
+  },
+  created: function () {
+    this.indexPosts();
+  },
+  methods: {
+    indexPosts: function () {
+      axios.get("/api/posts").then((res) => {
+        this.posts = res.data;
+        console.log("INDEX OF POSTS:", this.posts);
+      });
+    },
+  },
+};
+</script>

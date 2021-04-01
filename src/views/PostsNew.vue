@@ -11,11 +11,17 @@
       <!-- New Post form goes here -->
       <div class="form-group">
         <label>Title:</label>
-        <input type="text" class="form-control" v-model="title" />
+        <input type="text" class="form-control" v-model="title" maxlength="30" />
+        <small class="text-warning">WARNING: Title must catch the reader's attention.</small>
+        <br />
+        <small class="text-danger" v-if="title.length > 0 && title.length <= 30">
+          {{ 30 - title.length }} characters remaining.
+        </small>
       </div>
       <div class="form-group">
         <label>Body:</label>
         <input type="text" class="form-control" v-model="body" />
+        <small class="text-warning">WARNING: Blog post content must be compelling and stylistically consistent.</small>
       </div>
       <div class="form-group">
         <label>Image:</label>

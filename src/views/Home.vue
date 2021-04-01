@@ -10,7 +10,7 @@
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js on this beautiful Tuesday!",
+      message: "Albert Einstein wants to know you're location",
     };
   },
   created: function () {},

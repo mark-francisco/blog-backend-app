@@ -2,7 +2,6 @@
   <div class="posts-show">
     <ul v-bind="post">
       <hr />
-      <h1>More Info:</h1>
       <h2>{{ post.id }}: {{ post.title }}</h2>
       <p>{{ post.body }}</p>
       <img v-bind:src="post.image" />
